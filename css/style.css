@@ -1,0 +1,143 @@
+body{
+  text-align: center;
+  background-color: #ebe3e0;
+  color: #6A605A;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+  color: #f9a646;
+  text-shadow: 1px 1px 1px #6A605A;
+  font: 3em Dosis, sans-serif;
+}
+
+.container{
+  text-align: center;
+  background-color: #ebe3e0;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #6A605A;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 2px gray;
+    
+    -webkit-border-radius:150px;
+  -moz-border-radius: 150px;
+  border-radius:150px;
+}
+
+.box{
+  width: 295px;
+  height: 295px;
+  margin: 0;
+  padding: 0;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.box.red{
+  position: absolute;
+  margin: 0 0 5px 5px;
+  background-color: red;
+
+  -webkit-clip-path: inset(0 0 50% 50%);
+  clip-path: inset(0 0 50% 50%);
+
+     -webkit-border-radius:150px;
+  -moz-border-radius: 150px;
+  border-radius:150px;
+}
+
+.box.blue{
+  position: absolute;
+  margin: 0 5px 5px 0;
+  background-color: blue;
+
+  -webkit-clip-path: inset(0 50% 50% 0);
+  clip-path: inset(0 50% 50% 0);
+
+       -webkit-border-radius:150px;
+  -moz-border-radius: 150px;
+  border-radius:150px;
+}
+
+.box.yellow{
+  position: absolute;
+  margin: 5px 0 0 5px;
+  background-color: yellow;
+
+  -webkit-clip-path: inset(50% 0 0 50%);
+  clip-path: inset(50% 0 0 50%);
+
+       -webkit-border-radius:150px;
+  -moz-border-radius: 150px;
+  border-radius:150px;
+}
+
+.box.green{
+  position: absolute;
+  margin: 5px 5px 0 0;
+  background-color: green;
+  -webkit-clip-path: inset(50% 50% 0 0);
+  clip-path: inset(50% 50% 0 0);
+  -webkit-border-radius:150px;
+  -moz-border-radius: 150px;
+  border-radius:150px;
+}
+
+.lit{
+  opacity: 1;
+}
+
+.counter{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.msgWinner, .msgLoser{
+  position: absolute;
+  top:0;
+  z-index: 1;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32,32,32,0.7);
+}
+
+.msgBox{
+  position:relative;
+  top: 30%;
+  padding: 20px;
+  width: 350px;
+  height: 150px;
+  margin: auto;
+  border: 2px solid #f9a646;
+  background-color: #ebe3e0;
+    -webkit-border-radius:5px;
+  -moz-border-radius: 5px;
+  border-radius:5px;
+}
+
+.hidden{
+  display:none;
+}
+
+.startOver, .play{
+  background-color: #e3d6c6;
+  padding: 10px 25px;
+  width: 100px;
+  border: 2px solid #f9a646;
+  font: 1em 'Open Sans', sans-serif;
+  color: #6A605A;
+  outline: 0;
+  cursor: pointer;
+  margin: 0 5px;
+    -webkit-border-radius:5px;
+  -moz-border-radius: 5px;
+  border-radius:5px;
+}
+
+i {
+  padding-right: 10px;
+}
