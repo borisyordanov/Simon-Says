@@ -1,33 +1,29 @@
 $(document).ready(function() {
-  // $('.winner').hide();
+
   var sequence =[];
   var counter = 0;
   var playing = false;
   var move = 0;
   var clickCount= 0;
 
-
 function gameStart(){
-  console.log('gameStart called');
-  if (counter >= 20) {
-    //player wins game end;
+  if (counter >= 20){
+    
     $('.msgWinner').removeClass('hidden');
-  }
-  else {
+  }else{
     if (playing ===false){
-    	addToSequence();
-    	counter++;
-    	updateCounter(counter);
-    	playSequence(sequence);
-    }//if
-  } //if-else
-}//gameStart
+      addToSequence();
+      counter++;
+      updateCounter(counter);
+      playSequence(sequence);
+    }
+  } 
+}
 
 function addToSequence(){
-var randVal = Math.floor(Math.random()*4)+1;
-sequence.push(randVal);
-console.log('sequence is: '+ sequence);
-}//addToSequence
+var random = Math.floor(Math.random()*4)+1;
+sequence.push(random);
+}
 
 function playSequence(sequence){
   var i = 0;
@@ -39,7 +35,7 @@ function playSequence(sequence){
     }
   },700);
   playing = true;
-} //playSequence
+} 
 
 function lightUp(box){
   playSound(box);
@@ -47,20 +43,17 @@ function lightUp(box){
   window.setTimeout(function(){
     $box.removeClass('lit');
   },400);
-}//lightUp
+}
 
 function updateCounter(counter){
   $('.counter').text('Round: '+ counter);
 }
-
-//PLAYER'S TURN
 
   $('.box').on('click', function(){
     //if the player has not repeated the full sequence
     if(clickCount < sequence.length && playing === true){
         move = $(this).attr('data-box');
         lightUp(move);
-        console.log('tile '+ move +' clicked');
         if (checkSequence(move,clickCount)){
           clickCount ++;
           if (clickCount >= sequence.length){
@@ -75,17 +68,13 @@ function updateCounter(counter){
         }
       }
       
-  }); //onClick
-
-
+  });
 
 function checkSequence(move, clickCount){
-  console.log('move is: '+ move);
-  console.log('sequence[clickCount] is: '+ sequence[clickCount]);
   var result = false;
   if (move == sequence[clickCount]){
     result = true;
-  }//checkSequence
+  }
   return result;
 }
 
@@ -94,9 +83,7 @@ function playSound(clip){
   sound.currentTime = 0;
   sound.play();
 }
-
-//BUTTONS
-$('.startOver').on('click', function(){
+$('.start').on('click', function(){
   sequence =[];
   counter = 0;
   playing = false;
@@ -117,4 +104,4 @@ $('.play').on('click', function(){
   gameStart();
   });
 
-});//document ready
+});
